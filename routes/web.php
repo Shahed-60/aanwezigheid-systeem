@@ -35,5 +35,5 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/aanwezigheid', [AanwezigheidController::class, 'index'])->name('aanwezigheid.index');
-
+Route::post('/aanwezigheid', [AanwezigheidController::class, 'store'])->name('aanwezigheid.store');
 require __DIR__ . '/auth.php';
