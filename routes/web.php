@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
+Route::post('/aanwezigheid/store', [AanwezigheidController::class, 'store'])->name('aanwezigheid.store');
 Route::get('/aanwezigheid', [AanwezigheidController::class, 'index'])->name('aanwezigheid.index');
 Route::post('/aanwezigheid', [AanwezigheidController::class, 'store'])->name('aanwezigheid.store');
 require __DIR__ . '/auth.php';

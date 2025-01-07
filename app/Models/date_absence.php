@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class date_absence extends Model
 {
+    public $timestamps = false; // Disable timestamps
+
+    protected $guarded = [];
     use HasFactory;
 }
