@@ -11,6 +11,7 @@
 <body>
     <h1>Studenten Toevoegen</h1>
    <form action="{{route('Student.Toevoegen')}}" method="post">
+    @csrf
     <input type="hidden" id="id" name="id"><br>
 
    <label for="Name">Naam:</label>

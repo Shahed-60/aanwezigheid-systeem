@@ -26,10 +26,10 @@ Route::get('/dashboard', function () {
 
 Route::get('/create', function () {
     return view('create');
-})->middleware(['auth', 'verified'])->name('create');
+});
 
 //routes voor het sturen naar de database
-Route::POST('/toevoegen', ['StudentController::class, StudentToevoegen'])->name('Student.Toevoegen');
+Route::POST('/toevoegen', [StudentController::class, 'StudentToevoegen'])->name('Student.Toevoegen');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
