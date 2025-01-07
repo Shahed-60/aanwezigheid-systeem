@@ -22,7 +22,7 @@
    <label for="birthdate">Geboortedatum:</label>
    <input type="text" id="birthdate" name="birthdate" placeholder="Geboortedatum"><br>
 
-        <input type="submit" value="Toevoegen">
+        <input type="submit" value="Opslaan">
    </form>
 </body>
 </html>
