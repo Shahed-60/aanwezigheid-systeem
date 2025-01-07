@@ -5,15 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toevoegen Student</title>
 </head>
+<style>
+
+</style>
 <body>
-   <form action="" method="POST">
+    <h1>Studenten Toevoegen</h1>
+   <form action="" method="">
+    <input type="hidden" id="id" name="id" required><br>
 
-   <label for="Name"></label>
-   <input type="text" id="name" name="name" placeholder="naam student">
+   <label for="Name">Naam:</label>
+   <input type="text" id="name" name="name" placeholder="Naam Student"><br>
 
-   <label for="last name"></label>
-   <input type="text" id="name" name="name" placeholder="naam student">
+   <label for="lastname">Achternaam:</label>
+   <input type="text" id="lastname" name="lastname" placeholder="Achternaam met Tussenvoegsel"><br>
 
+   <label for="birthdate">Geboortedatum:</label>
+   <input type="text" id="birthdate" name="birthdate" placeholder="Geboortedatum"><br>
+
+        <input type="submit" value="Opslaan">
    </form>
 </body>
 </html>
