@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\aanwezigheid;
 use App\Models\Student;
 use Illuminate\Http\Request;
+use App\Models\date_absence;
+
 
 class AanwezigheidController extends Controller
 {
@@ -30,8 +32,26 @@ class AanwezigheidController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
-        // return redirect(route('aanwezigheid.index'));
+        $statuses = $request->input('status', []);
+        $currentDate = now()->addDay()->toDateString();
+
+        foreach ($statuses as $id => $status) {
+            if ($status === 'afwezig') {
+                // Save the date for the afwezig status
+                date_absence::create([
+                    'student_id' => $id,
+                    'date' => $currentDate
+                ]);
+            } else {
+                // Create a record with a null date for aanwezig status
+                date_absence::create([
+                    'student_id' => $id,
+                    'date' => null
+                ]);
+            }
+        }
+
+        return redirect()->back();
     }
 
     /**

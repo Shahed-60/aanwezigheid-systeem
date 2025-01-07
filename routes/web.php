@@ -26,17 +26,17 @@ Route::get('/dashboard', function () {
 
 Route::get('/create', function () {
     return view('create');
-})->middleware(['auth', 'verified'])->name('create');
+});
 
 //routes voor het sturen naar de database
-Route::POST('/toevoegen', ['StudentController::class, StudentToevoegen'])->name('Student.Toevoegen');
+Route::POST('/toevoegen', [StudentController::class, 'StudentToevoegen'])->name('Student.Toevoegen');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
+Route::post('/aanwezigheid/store', [AanwezigheidController::class, 'store'])->name('aanwezigheid.store');
 Route::get('/aanwezigheid', [AanwezigheidController::class, 'index'])->name('aanwezigheid.index');
 Route::post('/aanwezigheid', [AanwezigheidController::class, 'store'])->name('aanwezigheid.store');
 require __DIR__ . '/auth.php';
