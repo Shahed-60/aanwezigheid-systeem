@@ -12,7 +12,8 @@ class AanwezigheidController extends Controller
      */
     public function index()
     {
-        return view('aanwezigheid.index');
+        $aanwezigheid = aanwezigheid::all();
+        return view('aanwezigheid.index', ['aanwezigheid' => $aanwezigheid]);
     }
 
     /**

@@ -34,6 +34,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/aanwezigheid', [AanwezigheidController::class 'index'])->name('aanwezigheid.index');
+Route::get('/aanwezigheid', [AanwezigheidController::class, 'index'])->name('aanwezigheid.index');
 
 require __DIR__ . '/auth.php';
