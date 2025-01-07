@@ -12,7 +12,7 @@ class AanwezigheidController extends Controller
      */
     public function index()
     {
-        //
+        return view('aanwezigheid.index');
     }
 
     /**
