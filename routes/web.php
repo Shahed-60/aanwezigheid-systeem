@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +26,9 @@ Route::get('/dashboard', function () {
 Route::get('/create', function () {
     return view('create');
 })->middleware(['auth', 'verified'])->name('create');
+
+//routes voor het sturen naar de database
+route::post('student/toevoegen', ['StudentController::class, StudentToevoegen'])->name('StudentToevoegen');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

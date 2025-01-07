@@ -10,7 +10,7 @@
 </style>
 <body>
     <h1>Studenten Toevoegen</h1>
-   <form action="" method="">
+   <form action="{{route('student.toevoegen')}}" method="">
     <input type="hidden" id="id" name="id" required><br>
 
    <label for="Name">Naam:</label>
