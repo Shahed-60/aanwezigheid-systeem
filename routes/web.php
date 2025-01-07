@@ -29,7 +29,7 @@ Route::get('/create', function () {
 })->middleware(['auth', 'verified'])->name('create');
 
 //routes voor het sturen naar de database
-Route::post('create', ['StudentController::class, StudentToevoegen'])->name('Student.Toevoegen');
+Route::POST('/toevoegen', ['StudentController::class, StudentToevoegen'])->name('Student.Toevoegen');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
