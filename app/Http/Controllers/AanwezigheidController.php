@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\aanwezigheid;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class AanwezigheidController extends Controller
@@ -12,7 +13,8 @@ class AanwezigheidController extends Controller
      */
     public function index()
     {
-        //
+        $aanwezigheids = Student::all();
+        return view('aanwezigheid.index', ['aanwezigheids' => $aanwezigheids]);
     }
 
     /**
@@ -28,7 +30,8 @@ class AanwezigheidController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
+        // return redirect(route('aanwezigheid.index'));
     }
 
     /**
